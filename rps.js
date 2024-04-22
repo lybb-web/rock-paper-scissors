@@ -71,19 +71,18 @@ function playGame()
     let playerScore = 0;
     let computerScore = 0;
     
-    for (let i = 0; i < 5; i++)
+    
+    playerChoice = prompt(`Round ${i+1}! What do you choose?`);
+    roundResult = playRound(playerChoice, getComputerChoice());
+    if (roundResult == "w")
     {
-        playerChoice = prompt(`Round ${i+1}! What do you choose?`);
-        roundResult = playRound(playerChoice, getComputerChoice());
-        if (roundResult == "w")
-        {
-            playerScore += 1;
-        }
-        else if (roundResult == "l")
-        {
-            computerScore += 1;
-        }
+        playerScore += 1;
     }
+    else if (roundResult == "l")
+    {
+        computerScore += 1;
+    }
+    
     if (playerScore > computerScore)
     {
         alert("You win!");
