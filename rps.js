@@ -72,7 +72,7 @@ function playGame()
     let computerScore = 0;
     
     
-    playerChoice = prompt(`Round ${i+1}! What do you choose?`);
+    playerChoice = prompt(`What do you choose?`);
     roundResult = playRound(playerChoice, getComputerChoice());
     if (roundResult == "w")
     {
@@ -107,4 +107,38 @@ function playGame()
 // const computerSelection = getComputerChoice();
 // console.log(playRound(playerSelection, computerSelection));
 // console.log(computerSelection);
-playGame();
+
+
+// const rockButton = document.querySelector("#rock")
+// rockButton.addEventListener("click", playRound("rock", getComputerChoice()))
+
+// const paperButton = document.querySelector("#paper");
+// paperButton.addEventListener("paper", playRound())
+
+// const scissorsButton = document.querySelector("#scissors");
+// scissorsButton.addEventListener("scissors", playRound());
+
+const button = document.querySelector('.weapons');
+button.addEventListener("click", (e) =>
+{
+    console.log(e.target);
+    console.log(e.target.id);
+
+    const target = e.target
+
+    switch (target.id)
+    {
+        case "rock":
+            playRound(target.id, getComputerChoice());
+            break;
+        case "paper":
+            playRound(target.id, getComputerChoice());
+            break;
+        case "scissors":
+            playRound(target.id, getComputerChoice());
+            break;
+    }
+}
+)
+
+// playGame();
