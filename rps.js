@@ -19,8 +19,10 @@ function playRound(playerSelection, computerSelection)
 {
     p = playerSelection.toLowerCase();
     c = computerSelection.toLowerCase();
+    const result = document.querySelector(".result");
     if (p == c)
     {
+        result.textContent = "It's a tie!";
         console.log("It's a tie!");
         return "It's a tie!";
     }
@@ -28,11 +30,13 @@ function playRound(playerSelection, computerSelection)
     {
         if (c == "scissors")
         {
+            result.textContent = "You win! Rock beats Scissors";
             console.log("You win! rock beats scissors!");
             return "w";
         }
         else
         {
+            result.textContent = "You lose! Paper beats Rock!";
              console.log("You lose! paper beats rock!");
             return "l";
         }
@@ -40,12 +44,15 @@ function playRound(playerSelection, computerSelection)
     else if (p == "paper")
     {
         if (c == "rock")
-        {
+        {   
+
+            result.textContent = "You win! Paper beats Scissors!";
             console.log("You win! paper beats scissors!");
             return "w";
         }
         else
         {
+            result.textContent = "You lose! Scissors beats Paper!";
             console.log("You lose! scissors beats paper!");
             return "l";
         }
@@ -54,11 +61,13 @@ function playRound(playerSelection, computerSelection)
     {
         if (c == "paper")
         {
+            result.textContent = "You win! Scissors beats Paper!";
             console.log("You win! scissors beats paper!");
             return "w";
         }
         else
         {
+            result.textContent = "You lose! Rock beats Scissors!";
             console.log("You lose! rock beats scissors!");
             return "l";
         }
