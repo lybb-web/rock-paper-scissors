@@ -77,18 +77,21 @@ function playRound(playerSelection, computerSelection)
 
 function playGame()
 {
-    let playerScore = 0;
-    let computerScore = 0;
+    // let playerScore = 0;
+    // let computerScore = 0;
+
     
+    let roundResult;
     
-    playerChoice = prompt(`What do you choose?`);
-    roundResult = playRound(playerChoice, getComputerChoice());
     if (roundResult == "w")
     {
+        console.log("You should kill yourself NOW!");
+        forecast.textContent = "You Win!";
         playerScore += 1;
     }
     else if (roundResult == "l")
     {
+        forecast.textContent = "You Lose!";
         computerScore += 1;
     }
     
@@ -126,28 +129,45 @@ function playGame()
 
 // const scissorsButton = document.querySelector("#scissors");
 // scissorsButton.addEventListener("scissors", playRound());
+const forecast = document.querySelector(".forecast");
+forecast.textContent = "Start the game by choosing a weapon!";
+
+let playerScore = 0;
+let computerScore = 0;
 
 const button = document.querySelector('.weapons');
-button.addEventListener("click", (e) =>
-{
-    console.log(e.target);
-    console.log(e.target.id);
-
-    const target = e.target
-
-    switch (target.id)
+    button.addEventListener("click", (e) =>
     {
-        case "rock":
-            playRound(target.id, getComputerChoice());
-            break;
-        case "paper":
-            playRound(target.id, getComputerChoice());
-            break;
-        case "scissors":
-            playRound(target.id, getComputerChoice());
-            break;
+        console.log(e.target);
+        console.log(e.target.id);
+    
+        const target = e.target
+    
+        switch (target.id)
+        {
+            case "rock":
+                roundResult = playRound(target.id, getComputerChoice());
+                break;
+            case "paper":
+                roundResult = playRound(target.id, getComputerChoice());
+                break;
+            case "scissors":
+                roundResult = playRound(target.id, getComputerChoice());
+                break;
+        }
+        
+        if (roundResult == "w")
+        {
+            playerScore += 1;
+            
+        }
+        else if (roundResult == "l")
+        {
+            computerScore += 1;
+        }
+        const scoreboard = document.querySelector(".scoreboard");
+        scoreboard.textContent = `${playerScore}-${computerScore}`;
     }
-}
-)
+    )
 
-// playGame();
+
