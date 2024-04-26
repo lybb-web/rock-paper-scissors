@@ -1,3 +1,26 @@
 body {
     background-color: darkblue;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.weapons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 32px;
+}
+
+div {
+    border: 1px solid white;
+}
+
+.weapon {
+    background-color: red;
+    height: 300px;
+    width: 300px;
+    font-size: 32px;
 }
