@@ -19,7 +19,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    flex: 3;
+    flex: 4;
     gap: 32px;
 }
 
@@ -32,4 +32,12 @@ div {
     height: 300px;
     width: 300px;
     font-size: 32px;
+}
+
+.forecast {
+    color: white;
+    justify-content: center;
+    display: flex;
+    flex: 1;
+    font-size: 24px;
 }
