@@ -78,7 +78,6 @@ function playGame()
     
     if (roundResult == "w")
     {
-        console.log("You should kill yourself NOW!");
         forecast.textContent = "You Win!";
         playerScore += 1;
     }
@@ -104,24 +103,24 @@ function playGame()
     
 }
 
+function displayWinner(playerScore, computerScore)
+{
+    const winner = document.querySelector(".winner");
+    if (playerScore > computerScore)
+    {
+        winner.textContent = "You Win!";
+    }
+    else if (computerScore > playerScore)
+    {
+        winner.textContent = "You Lose!";
+    }
+    else
+    {
+        winner.textContent = "No One Wins!";
+    }
+    
+}
 
-
-// alert(getComputerChoice());
-
-// const playerSelection = "rock";
-// const computerSelection = getComputerChoice();
-// console.log(playRound(playerSelection, computerSelection));
-// console.log(computerSelection);
-
-
-// const rockButton = document.querySelector("#rock")
-// rockButton.addEventListener("click", playRound("rock", getComputerChoice()))
-
-// const paperButton = document.querySelector("#paper");
-// paperButton.addEventListener("paper", playRound())
-
-// const scissorsButton = document.querySelector("#scissors");
-// scissorsButton.addEventListener("scissors", playRound());
 const forecast = document.querySelector(".forecast");
 forecast.textContent = "Start the game by choosing a weapon!";
 
@@ -133,9 +132,6 @@ const button = document.querySelector('.weapons');
     button.addEventListener("click", (e) =>
     {
         roundNumber += 1;
-        console.log(e.target);
-        console.log(e.target.id);
-    
         const target = e.target
     
         switch (target.id)
@@ -164,6 +160,10 @@ const button = document.querySelector('.weapons');
         round.textContent = `Round ${roundNumber}`;
         const scoreboard = document.querySelector(".scoreboard");
         scoreboard.textContent = `${playerScore}-${computerScore}`;
+        if (roundNumber == 5)
+        {
+            displayWinner(playerScore, computerScore)
+        }
     }
     )
 

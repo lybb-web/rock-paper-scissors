@@ -62,3 +62,10 @@ div {
     
     font-size: 24px;
 }
+
+.winner {
+    color: white;
+    justify-content: center;
+    display: flex;
+    font-size: 64px;
+}
