@@ -5,17 +5,26 @@ body {
     flex-direction: column;
 }
 
+.title {
+    display: flex;
+    flex: 1;
+    font-size: 72px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
 .weapons {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    flex: 1;
+    flex: 3;
     gap: 32px;
 }
 
 div {
-    border: 1px solid white;
+    /* border: 1px solid white; */
 }
 
 .weapon {
