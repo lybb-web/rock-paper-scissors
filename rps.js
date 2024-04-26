@@ -19,25 +19,22 @@ function playRound(playerSelection, computerSelection)
 {
     p = playerSelection.toLowerCase();
     c = computerSelection.toLowerCase();
-    const result = document.querySelector(".result");
+    const forecast = document.querySelector(".forecast");
     if (p == c)
     {
-        result.textContent = "It's a tie!";
-        console.log("It's a tie!");
+        forecast.textContent = "It's a tie!";
         return "It's a tie!";
     }
     else if (p == "rock")
     {
         if (c == "scissors")
         {
-            result.textContent = "You win! Rock beats Scissors";
-            console.log("You win! rock beats scissors!");
+            forecast.textContent = "You win! Rock beats Scissors";
             return "w";
         }
         else
         {
-            result.textContent = "You lose! Paper beats Rock!";
-             console.log("You lose! paper beats rock!");
+            forecast.textContent = "You lose! Paper beats Rock!";
             return "l";
         }
     }
@@ -46,14 +43,12 @@ function playRound(playerSelection, computerSelection)
         if (c == "rock")
         {   
 
-            result.textContent = "You win! Paper beats Scissors!";
-            console.log("You win! paper beats scissors!");
+            forecast.textContent = "You win! Paper beats Scissors!";
             return "w";
         }
         else
         {
-            result.textContent = "You lose! Scissors beats Paper!";
-            console.log("You lose! scissors beats paper!");
+            forecast.textContent = "You lose! Scissors beats Paper!";
             return "l";
         }
     }
@@ -61,14 +56,12 @@ function playRound(playerSelection, computerSelection)
     {
         if (c == "paper")
         {
-            result.textContent = "You win! Scissors beats Paper!";
-            console.log("You win! scissors beats paper!");
+            forecast.textContent = "You win! Scissors beats Paper!";
             return "w";
         }
         else
         {
-            result.textContent = "You lose! Rock beats Scissors!";
-            console.log("You lose! rock beats scissors!");
+            forecast.textContent = "You lose! Rock beats Scissors!";
             return "l";
         }
     }
