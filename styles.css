@@ -14,23 +14,43 @@ body {
     justify-content: center;
 }
 
+.center {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+
+}
+
+.round-number { 
+    font-size: 48px;
+    color: white;
+}
+
+.scoreboard {
+    font-size: 48px;
+    color: white;
+    text-align: center;
+}
+
 .weapons {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    flex: 4;
     gap: 32px;
 }
 
 div {
-    /* border: 1px solid white; */
+    border: 1px solid white;
 }
 
 .weapon {
     background-color: red;
     height: 300px;
     width: 300px;
+    border-radius: 24px;
     font-size: 32px;
 }
 
@@ -38,6 +58,6 @@ div {
     color: white;
     justify-content: center;
     display: flex;
-    flex: 1;
+    
     font-size: 24px;
 }
