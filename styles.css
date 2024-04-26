@@ -18,7 +18,7 @@ body {
     display: flex;
     flex: 3;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     gap: 24px;
 
 }
@@ -26,6 +26,7 @@ body {
 .round-number { 
     font-size: 48px;
     color: white;
+    text-align: center;
 }
 
 .scoreboard {
@@ -43,7 +44,7 @@ body {
 }
 
 div {
-    border: 1px solid white;
+    /* border: 1px solid white; */
 }
 
 .weapon {

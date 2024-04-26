@@ -134,10 +134,12 @@ forecast.textContent = "Start the game by choosing a weapon!";
 
 let playerScore = 0;
 let computerScore = 0;
+let roundNumber = 0;
 
 const button = document.querySelector('.weapons');
     button.addEventListener("click", (e) =>
     {
+        roundNumber += 1;
         console.log(e.target);
         console.log(e.target.id);
     
@@ -165,6 +167,8 @@ const button = document.querySelector('.weapons');
         {
             computerScore += 1;
         }
+        const round = document.querySelector(".round-number");
+        round.textContent = `Round ${roundNumber}`;
         const scoreboard = document.querySelector(".scoreboard");
         scoreboard.textContent = `${playerScore}-${computerScore}`;
     }
